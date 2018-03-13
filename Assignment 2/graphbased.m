@@ -5,7 +5,7 @@ data = [datal; datau];
 
 dist =exp(-squareform(pdist(data(:,:))).^2);
 
-thresh = mean(dist(:)) + 0.5*std(dist(:));
+thresh = mean(dist(:)) - std(dist(:));
 [m, n] = size(data);
 for i = 1:size(dist,1)
     for j = 1:size(dist,1)
